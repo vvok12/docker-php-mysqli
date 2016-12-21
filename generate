@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -eo pipefail
+
+declare -a versions=(
+  7-apache
+)
+
+for version in "${versions[@]}"
+do
+  rm -rf "$version"
+  mkdir "$version"
+
+  cat > "$version/Dockerfile" <<-END
+# Generated automatically by generation script
+# Do no edit this file
+
+FROM php:${version}
+
+RUN docker-php-ext-install mysqli
+END
+
+done
