@@ -1,4 +1,4 @@
-# Generated automatically by generation script
+# Generated automatically by update.sh
 # Do no edit this file
 
 FROM php:7
